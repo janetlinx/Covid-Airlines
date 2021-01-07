@@ -1,0 +1,597 @@
+---
+title: "Delta Airlines Marketing Campaign (Post-pandemic)"
+author: "Janet Lin"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment="", warning = FALSE, message = FALSE, tidy.opts=list(width.cutoff=55), tidy = TRUE)
+```
+
+## Part 1:  Research Proposal
+
+### Executive Summary / Abstract
+
+The number of domestic flights taken in the United States have decreased significantly in the past year due to a pandemic. 2020 has not been kind to airlines, as they are facing severe financial damage, averaging a $84.3 billion loss this year alone. This study analyzes Delta airlines and how different applied marketing campaign strategies can impact future ticket revenue. We will select 800 individuals for both the e-mail marketing campaign and website marketing campaign, ultimately dividing them evenly into a treatment group and control group (400 subjects in each group). These individuals either purchased a Delta airlines ticket within the past year, or are currently looking for flights online. We will also compare the conversion rate of these two channels and figure out whether one is more successful than the other. The results revealed that the coupon marketing strategy will conclusively increase customer conversion rates. The conversion rate of one channel will be higher than the other and we should use this strategy to attract more customers and increase ticket sales. The analysis results associated with the research questions and two scenarios are provided in the report.
+
+### Statement of the Problem
+
+As travel restrictions and quarantine orders were implemented, the demand for air travel has significantly declined over the past year. The number of domestic flights taken in the United States has notably decreased due to COVID-19. Airline industries are facing severe financial damage, averaging a $84.3 billion loss this year alone. With various protocols and blueprints to recovery, there is a compelling need for a sustainable approach to push for safety, cooperation and normalcy so that the aviation industry can get back on track. 
+ 
+The aviation industry is essential for global business, generating substantial economic growth, providing countless jobs and ultimately facilitating international trade and tourism. In this study, we will focus on Delta airlines, a major airline of the United States and a legacy carrier. The rise of challenges in the face of crisis is nothing new to Delta and the broader travel sector, as it has overcome past pandemics, recessions and other devastating events. There have been some diverse attempts at engaging past and new air travel customers, but these campaigning efforts have yet to have any significant effect on turnout. By October 2020, 43 commercial airlines had gone bankrupt and this list still continues to grow. It is in the best interest of Delta airlines to launch successful marketing campaigns in order to increase ticket revenue after the impact of Covid-19. 
+ 
+
+### Research Questions and Hypotheses 
+
+In this project, our group focused on what successful marketing campaigns can the Delta airline companies launch to increase ticket revenue. For our email channel experiment, users in the control group will receive a public service announcement (PSA) email which includes wildfire prevention or global warming, instead of a coupon email; for the website channel experiment, users of the control group will also see PSA instead of the coupon advertisements.
+
+Our first research question is about if e-mail advertising can effectively achieve the airline's goal which is to improve the conversion rate on airline tickets. For this research question, our null hypothesis is that the conversion rate of coupons delivered by email is almost the same as the conversion rate of PSA delivered by email. And our alternative hypothesis is that the conversion rate of coupons delivered by email is higher than that of PSA delivered by email. In simple mathematical terms, the null hypothesis would be H0: remail_treatment = remail_control and the alternative hypothesis would be HA: remail_treatment > remail_control where the remail_treatment states for the conversion rate of coupons delivered by email and remail_control states for the conversion rate of PSA delivered by email.
+
+Our second research question is about if website advertising can effectively improve the conversion rate on airline tickets. For this research question, our null hypothesis is that the conversion rate of coupon advertising on websites is almost the same as the conversion rate of PSA on websites. And our alternative hypothesis is that the conversion rate of coupon advertising on websites is higher than the conversion rate of PSA on websites. In simple mathematical terms, the null hypothesis would be H0: rweb_treatment = rweb_control and the alternative hypothesis would be HA: rweb_treatment > rweb_control where the rweb_treatment states for the conversion rate of coupon advertising on website and rweb_control states for the conversion rate of PSA on the website.
+
+Our third research question is about if the conversion efficiency of the two advertising methods is the same. For this research question, our null hypothesis is that the conversion rate of coupon advertising delivered by email is almost the same as the conversion rate of coupon advertising on websites. And our alternative hypothesis is that the conversion rate of coupon advertising delivered by email is not the same as the conversion rate of coupon advertising on websites. In simple mathematical terms, the null hypothesis would be H0: remail_treatment = rweb_treatment and the alternative hypothesis would be HA: remail_treatment ≠ rweb_treatment where the remail_treatment states for the conversion rate of coupons delivered by email and rweb_treatment states for the conversion rate of coupon advertising on the website.
+
+
+### Importance of the Study
+
+Air transport represents a critical share of GDP and is closely linked to the activities of many other economic sectors. It not only relates to airports and aircraft manufacturing but also to tourism and other business events. However, the dramatic drop in demand for air transport due to the COVID-19 pandemic is threatening the viability of many firms in the air transport sector, especially the airline industry. To be specific, the change in the behavior of passengers following the COVID-19 crisis and travel restrictions have caused a significant decrease in demand for airline services. Countless jobs, international trades, and other substantial global or domestic business events facilitated by the airline industry are at stake.
+
+As the airline industry is a key enabler of many economic activities, there is an urgent need for airline companies to get back on track and financially recover as soon as possible. Our study utilized a data analytics approach to gain a better understanding of passengers’ behaviors and called for a focused program to study on the passengers’ data. Then we analyzed the data we collected and make strategic plans for airline companies to minimize the detrimental cost and increase revenue after the pandemic. We chose Delta Air Lines, a leader in domestic and international travel based in Atlanta, U.S. as our object of study. The study focused on how different applied marketing strategies can impact ticket revenue.
+
+The findings of this study will contribute to the benefit of the whole airline industry considering that efficient and successful marketing campaigns can help airline companies to make up for a loss after the direct impact of COVID-19. The outcome of this study will directly benefit Delta airlines. It can also be used as a forward guidance for many other airline companies to follow, leading to a speedy recovery from the pandemic. 
+
+
+### Literature Review
+
+The vastness of the airline industry and its strong inter-industry linkages make it an important part of the economy. According to McKinsey & Company, aviation contributes to 3.4 percent of the global GDP by generating more than 2 trillion dollars around the globe both directly or indirectly. However, travel restrictions and a dramatic slump in demand for passengers due to the ongoing pandemic are causing a huge amount of loss in revenue for many aviation firms and airline companies (Sobieralski, 2020). According to IATA Air Passenger Market Analysis, passenger air transport measured as revenue passenger kilometer was reduced by 90% year-on-year in April 2020 and still down 75% in August.
+
+Travel restrictions and changes in transport behavior by cautious consumers may prevent a return to pre-crisis demand levels for airline companies. The research of impact and policy responses of COVID-19 and the aviation conducted by OECD.org claimed difficulties for commercial air traffic to recover. The number of flights remains more than 40% below pre-crisis level around the world (OECD.org). In such turbulent times, another uncertainty that airline companies face is the cost of health-related measures. The study conducted by OECD.org also analyzed operating costs in the short-run for airlines. Additional health and safety requirements such as temperature checks or viral tests are likely to increase the financial burden of airline companies. 
+
+The study reported that the measure of social distancing could induce a reduction in the passenger load factor by 50%. Such uncertainties affect the whole airline industry and our study took a full consideration of circumstances of a possible resurgence of the pandemic that the industry is exposed to. Governments in various countries have all chosen to respond differently. Some have provided financial support or guarantee existing debt, whereas others believe in market mechanisms and let firms file for bankruptcy. Despite the increase of government influence, airline companies are also adopting crisis response strategies to recover financially, for example, major European carriers are modifying their strategic priorities and decision making substantially (Albers & Rundshagen, 2020).
+
+For our research study, we will analyze how Delta airlines can increase ticket revenue post pandemic through different marketing campaigns. Noted that national carrier’s promotional activities have a positive impact on driving the revenue and enhancing brand image (Saed, Upadhya, & Saleh, 2020), we looked deeply into several potential customer segments and figure out the most efficient promotional activity in order to help Delta airlines increase their ticket revenue after COVID-19.
+
+A prior study on post pandemic aviation market recovery in China (Czerny, Fu, Lei, & Oum) highlighted how the domestic market in China has experienced a quick recovery as to about 80% of the pre-crisis level by July 2020. The main takeaway from the study is that the observations from the Chinese domestic market suggest that once the pandemic is under control, a reasonably quick recovery would occur. Therefore, we have the confidence to ameliorate the current situation and find the best solution for Delta to increase ticket sales. The study also suggests that airlines based in open economies that have small domestic markets will face severe challenges. For our study, we focus specifically on Delta airlines, a major airline within the domestic United States. 
+In his 2019 paper, Murphy suggested that the best approach which airlines should take with their value proposition falls into three key categories: price, service quality, and customer loyalty and habit. For our research, we focus on the efficiency of two marketing channels which would lead to an assessment of those three criteria. These factors will help us to find out which marketing campaign is the most efficient and profitable for Delta Airlines. Three elements that we will address in later research will be additional promotional strategies, ticket booking procedure and customer loyalty reinforcement.
+ 
+Pritscher and Feyen discussed that in the airline industry, data analysis and data mining are very useful to support customer relationship management (CRM). Their research adopted classification trees to set customer segments based on individual patterns and demonstrating the usefulness of segmentation results for marketing concerns and for improving customer services. Drawing lessons from this prior research, our study also separated the population into different customer segments and marked the marketing strategy with the highest conversion rate.
+
+### Research Plan
+
+
+#### Population of Interest
+
+This study intends to focus on Delta Airlines and how different applied marketing strategies can impact ticket revenue. To improve airline ticket conversion rates, we need to focus on Delta’s past customers including both frequent and one-time ticket purchasers, as well as potential customers that have recently looked for flight tickets online.
+
+In order to test the conversion rate of email, our population of interest is going to be the company’s past customers (both frequent and one-time flyers) because we have access to their email from the purchase history. As for the website conversion, our main target is potential customers who visit flight-ticket booking websites. We intend to narrow down our potential customers pool by filtering flight-ticket booking websites and posting discounts and deals on these sites.
+
+
+#### Sample Selection
+ 
+ Since we want to compare the difference between two marketing channels, we will set up two groups. The first group will be for treatment while the other is for control. For the treatment group, we will distribute the same amount of coupons on the website, and for the control group, we will email our past customers with the same number of coupons. 
+
+In this study and in our email selection, we will only include customers who purchased Delta airline tickets within one year. Individuals who recently searched for information on ticket-booking websites have more interest in buying tickets. Taking this into consideration, it’s important for us to evaluate the best group to choose for a higher success rate.
+
+In order to answer whether the conversion rate on coupon advertising and other PSA advertising is the same or not, we will also have control and treatment groups.Individuals who received coupon advertising are in the treatment group, while individuals receiving PSA advertising are in the control group. We will make sure that the two channels have the same number of treatment and control groups to ensure the validity of the test result. During this selection, we will use random sampling to randomize the PSA ads distribution.
+
+
+#### Sample Size
+
+According to our research problems, we have determined the population of interest and the sample selection. We also have to determine the sample size for these three researches. The appropriate sample size is usually determined by three important criteria: the level of precision, the level of confidence or risk, and the degree of variability in the attributes being measured (Miaoulis & Michener, 1976). And we find from Glenn’s sample size table 1(Israel, 1992) that the sample is 400 when the population size is greater than 100,000 when we assume the level of precision is 5%, the level of confidence is 95%, and the degree of variability is 50% since this would provide the maximum sample size. Therefore, for each test group and control group in these comparative experiments, we decide to use 400 as our sample size and randomly select them from the research results. The statistical power could also be calculated according to pwr.t.test function. As the following results show, the statistical power will be 80.65%, 99.99%, and 100% if we assume the effect size is 0.2, 0.5, and 0.8.
+
+```{sample size}
+    Two-sample t test power calculation 
+
+              n = 400
+              d = 0.2, 0.5, 0.8
+      sig.level = 0.05
+          power = 0.8064973, 0.9999998, 1.0000000
+    alternative = two.sided
+
+NOTE: n is number in *each* group
+```
+
+
+#### Operational Procedures
+First, we randomly select 800 users for the email channel research and 800 users for the website channel research according to our sample size calculation.
+
+Second, we will send emails and upload coupons when users browse the official Delta website to subjects in the email channel research and website channel research respectively. 
+
+For the email channel experiment, we will randomly send emails to 800 users based on their previously submitted contact information. We will collect data pertaining to whether they were interested in the coupon given to them and monitor their decision in buying a ticket using the promotional link sent to them via email in 10 days. This is long enough for users to notice the email and much less than the interval between purchases of average people.
+
+For the website channel experiment, we will randomly display a coupon advertisement on ticket-booking web pages to 800 users when they browse these websites. We will also measure if they choose to buy a ticket on these websites in 10 days after coming across the advertisement.
+
+Third, for each experiment, it would be very important to know the extent to which conversions can be attributed to the advertising campaign. Therefore, we have to provide evidence that the coupon does make a difference. We do so by randomly dividing these 800 users to form a control group and a test group, with 400 subjects in each group.
+
+For the email channel experiment, users in the control group will be sent a public service announcement (PSA) email, such as emails about wildfire prevention or global warming instead of an advertisement coupon email. As for the website channel experiment, users in the control group will also be shown the PSA instead of the advertisement in the exact same size and position on the page. By randomly selecting which user is in the control group and which user is exposed, we can then measure the difference of how impactful the coupons are. For these two studies, we will complete these operations within half a year instead of a shorter period of time. This is to prevent other confounding factors such as seasonal demand fluctuations or holidays from affecting the final research results.
+
+Finally, for the third research question which compares the conversion rate of these two channels, we will use the results of previous two experiments. Therefore, we don’t need to conduct extra operations.
+
+
+### Brief Schedule
+
+1. Phase I: Developing research questions and literature review (Plan on 1 week)
+In this phase we will find a managerial dilemma that is critical for our company and formulate the related research questions and hypotheses. After determining the research questions, we will also read articles in this field to understand the prevailing theories and previous results of similar researches.
+
+2. Phase II: Research strategy design (Plan on 2 week)
+In this phase we should determine important experimental factors (such as the population of interest, sample size, and sample selection method) and operational procedures. This phase is actually very hard, and it can take a long time.
+
+3. Phase III: Conducting the Study (Plan on 6 months)
+In this phase, we conduct experiments according to the planned procedures and record the data generated. We plan to conduct this project in a long period rather than a short one in order to avoid the impact of short-term abnormal fluctuations. At this stage, it is also easy to encounter technical problems or other operational problems such as data collection leading to delays in the schedule.
+
+4. Phase IV: Data analysis (Plan on 2 weeks)
+In this phase, we will perform statistical analysis on the data obtained in the previous phase to determine whether the results meet the hypothesis we made earlier. In the process of analysis, the data we collected may be insufficient or it may be difficult to find a suitable statistical method for our analysis. These situations can also lead to delays.
+
+5. Phase V: Writing the final research report (Plan on 1 week)
+In this phase, we will summarize the previous work and conclusions to complete a final research report. Enough time is also planned for revision and others’ feedback.
+
+
+#### Data Collection
+
+There are two ways to collect our data in our study. As mentioned above, email conversion rate will be collected from emails that we send out to our past customers. Website data will be collected from individuals who clicked a link from the official Delta website. Basically, rarely any detailed personal information will be needed in our data collection to conduct the study. Only the link conversion rate will be recorded in the research. In terms of charity advertising, we will also collect data for those who clicked from email and website.
+
+#### Data Security
+
+In this study, we will not include any sensitive information of our customers and potential customers. Since the nature of our study only addresses conversion rates from two marketing channels, this study will not include customers' names or their credit card information. In terms of website inclusion, our dataset will only store those who clicked our ads link, so there is no data exploitation to the website's other users. In reference to our data, we will use numbers to identify each person who clicked the advertising link. All data collection and storage devices will be password protected and only limited members of the study team will have access to it. After we analyze our data, all the information will be secured, and we will not sell our data to other companies or individuals. This study will solely be considered as a suggestion for the company’s future marketing campaign. 
+
+
+#### Outcomes (Dependent Variables)
+
+The dependent variable for the first two experiments will be the conversion rate of each group. If a customer buys a ticket, the conversion condition will be 1 while the conversion rate will be 0 if the user doesn’t buy a ticket. The conversion rate of each group can be obtained by dividing the sum of conversion condition by the total number of users of this group. The dependent variable for the third research will be the conversion rate of each channel and it could be calculated based on previous research results.
+
+#### Treatments (Independent Variables)
+
+For the email channel experiment, the independent variable will be whether a past customer is sent an email with a coupon or without a coupon. As for the website channel experiment, the independent variable will be whether a user will see the coupon or a PSA on the web page. Our main objective is to figure out if a coupon advertisement will affect the conversion rate of customers. 
+
+The variable will be true if the user receives the coupon email or sees the coupon on the web page. It will be false if the user receives an irrelevant email or sees a PSA on the official Delta website. For the third research question, the independent variable will be email for the email channel experiment and website for the website channel experiment. We ultimately want to compare the conversion rate of these two channels.
+
+
+### Statistical Analysis Plan  
+
+For each one in the first two experiments, we need to compare whether the average conversion rate between the test group and the control group is the same. Since the variable conversion condition is 1 or 0, the mean value of the conversion condition is equal to the conversion rate. The two-sample t test which allows us to compare the mean value of conversion condition (equals to the conversion rate) of two samples will be a suitable statistical method to analyze the first two questions. 
+ 
+For the third experiment, we need to compare if the average conversion rate between two different channels is the same. We could also use the two-sample t test to figure out if the difference between the mean value of conversion condition (equals to the conversion rate) of email channel test group and that of website channel group is a substantial difference or a result of sample selection.
+
+### Limitations and Uncertainties
+
+Given our research problem, we might have excluded other essential predictors in the study. Contributions to conversion rate is extremely broad but we only test the difference between two marketing channels. However, age, gender, education, income and so on also have an effect on the final conversion rate. Even within our sample group, varied attributions on each person might influence the results to a certain degree. For example, in our control group, website users may be on the younger side, having income levels that are average or below average. If this is the case, coupons and other promotional activities could be a lot more effective with this group.
+
+Though random sample selection could alleviate this problem, the results might still include some bias. There is no certainty that a strong statistical result can guarantee the exact results of a real world application. If we are able to collect more customer information from websites, such as gender or age, we could stratify our observed data based on these characteristics and test if these are relevant to the results of the study. Moreover, we do not specify the class, so we cannot conclude whether coupons on different classes will have an effect on conversion rate. It is possible that people who normally choose business class or first class might not be interested in using coupons.
+
+If this is the case, we can choose to ignore how other marketing campaigns could have effects on this customer sector. However, it is impossible to know whether our potential customers would purchase an economy-class ticket or other-class ticket. If we want to test the effectiveness of other marketing methods, then we should only use past customers’ purchase information to test. 
+
+
+## Part 2:  Simulated Studies
+
+
+### Research Question 1:
+
+#### Scenario 1:  No Effect
+
+##### Simulation
+For scenario 1, we suppose that the coupon advertising via email does not affect the conversion rate. In other words, we may find that the conversion rate of the treatment group is the same as that of the control group. According to the research plan section, we will use R code to make data simulation: for the control group and the treatment group, we randomly generated 400 subjects that belong to binomial distributions. In the data table, "0" represents that the subject has not been successfully converted, while "1" represents that the subject has been successfully converted. Based on this simulation method, we get a set of simulation data. Then, we conducted 1000 similar simulated data experiments and only the initial simulation data are listed below.
+```{r q1_scenario1_simulation}
+library(data.table)
+library(DT)
+n<- 400
+test <- rep('Treatment', n)
+control <- rep('Control', n)
+group = c(test, control)
+ad11.dat<-data.table(Group = group)
+ad11_test <- rbinom(n = 400,1,p=0.05)
+ad11_control <- rbinom(n = 400,1,p=0.05)
+ad11 <- c(ad11_test, ad11_control)
+ad11.dat$AD <- ad11
+datatable(data=ad11.dat)
+# Analyze function
+analyze.experiment <- function(the.dat){
+    require(data.table)
+    setDT(the.dat)
+    the.test <- t.test(x=the.dat[Group == "Treatment", AD], y=the.dat[Group == "Control", AD], alternative = "greater")
+  
+    the.effect <- the.test$estimate[1]- the.test$estimate[2]
+    lower.bound <- the.test$conf.int[1]
+    Treat_mean <- the.test$estimate[1]
+    Contr_mean <- the.test$estimate[2]
+    p <- the.test$p.value
+    
+    result <- data.table(effect = the.effect, lower_ci = lower.bound, p = p, Treat_mean, Contr_mean)
+    
+    return(result)
+}
+# Simulation for 1000 experiments
+B<-1000
+n<-400
+RNGversion(vstr=6.6)
+set.seed(seed=66)
+Experiment<-rep.int(x=1:B, times=n)
+test11 <- rep('Treatment', n*B)
+control11 <- rep('Control', n*B)
+group11 = c(test11, control11)
+sim11.dat<-data.table(Experiment, Group=group11)
+setorderv(x=sim11.dat,cols=c("Experiment", "Group"), order=c(1,1))
+sim11.dat[Group == "Control", AD:= rbinom(n = .N,1,p=0.05)]
+sim11.dat[Group == "Treatment", AD:= rbinom(n = .N,1,p=0.05)]
+exp11.results<-sim11.dat[, analyze.experiment(the.dat= .SD), keyby="Experiment"]
+```
+
+##### Analysis
+Based on the test result for the initial simulation data, the p-value is larger than 0.05, so we fail to reject the null hypothesis. We may conclude that the the coupon advertising via email does not affect the conversion rate if our study produced data is like the data we simulated. After 1000 repeated experiments, the probability that we fail to reject the null hypothesis when the null hypothesis is true is about 95%.
+```{r q1_scenario1_analysis}
+library(dplyr)
+analyze.experiment(ad11.dat)
+exp11.results
+e11<-mean(exp11.results$effect)
+t11<-t.test(exp11.results$effect)
+lower_ci11<-t11$conf.int[1]
+upper_ci11<- t11$conf.int[2]
+p11_fp<-exp11.results[,mean(p<0.05)]
+p11_tn<-1- p11_fp
+data.frame(e11,lower_ci11,upper_ci11,p11_fp,p11_tn,p11_fn=0,p11_tp=0)
+```
+
+
+
+
+
+#### Scenario 2:  An Expected Effect
+
+##### Simulation
+For scenario 2, we suppose that the coupon advertising via email affects the conversion rate. In other words, we may find that the conversion rate of the treatment group is higher than that of the control group. We use R code again to make data simulation: for the control group and the treatment group, we randomly generated 400 subjects that belong to binomial distributions. In the data table, "0" represents that the subject has not been successfully converted, while "1" represents that the subject has been successfully converted. We also conducted 1000 similar simulated data experiments and only the initial simulation data are listed below.
+```{r q1_scenario2_simulation}
+n<- 400
+test <- rep('Treatment', n)
+control <- rep('Control', n)
+group = c(test, control)
+ad12.dat<-data.table(Group = group)
+ad12_test <- rbinom(n = 400,1,p=0.12)
+ad12_control <- rbinom(n = 400,1,p=0.05)
+ad12 <- c(ad12_test, ad12_control)
+ad12.dat$AD <- ad12
+datatable(data = ad12.dat)
+# Analyze function
+analyze.experiment <- function(the.dat){
+    require(data.table)
+    setDT(the.dat)
+    the.test <- t.test(x=the.dat[Group == "Treatment", AD], y=the.dat[Group == "Control", AD], alternative = "greater")
+  
+    the.effect <- the.test$estimate[1]- the.test$estimate[2]
+    lower.bound <- the.test$conf.int[1]
+    Treat_mean <- the.test$estimate[1]
+    Contr_mean <- the.test$estimate[2]
+    p <- the.test$p.value
+    
+    result <- data.table(effect = the.effect, lower_ci = lower.bound, p = p, Treat_mean, Contr_mean)
+    
+    return(result)
+}
+# Simulation for 1000 experiments
+B<-1000
+n<-400
+RNGversion(vstr=6.6)
+set.seed(seed=66)
+Experiment<-rep.int(x=1:B, times=n)
+test12 <- rep('Treatment', n*B)
+control12 <- rep('Control', n*B)
+group12 = c(test12, control12)
+sim12.dat<-data.table(Experiment, Group=group12)
+setorderv(x=sim12.dat,cols=c("Experiment", "Group"), order=c(1,1))
+sim12.dat[Group == "Control", AD:= rbinom(n = .N,1,p=0.05)]
+sim12.dat[Group == "Treatment", AD:= rbinom(n = .N,1,p=0.12)]
+exp12.results<-sim12.dat[, analyze.experiment(the.dat= .SD), keyby="Experiment"]
+```
+
+##### Analysis
+Based on the test result for the initial simulation data, the p-value is really small, so we would reject the null hypothesis. We may conclude that the the coupon advertising via email will have higher conversion rate if our study produced data is like the data we simulated. After 1000 repeated experiments, the probability that we reject the null hypothesis when the null hypothesis is false is about 97%.
+```{r q1_scenario2_analysis}
+analyze.experiment(ad12.dat)
+exp12.results
+e12<-mean(exp12.results$effect)
+t12<-t.test(exp12.results$effect)
+lower_ci12<-t12$conf.int[1]
+upper_ci12<- t12$conf.int[2]
+p12_fn<-exp12.results[,mean(p>0.05)]
+p12_tp<-1- p12_fn
+sd12<-sd(exp12.results$effect)
+ee12<-e12/sd12
+data.frame(ee12,e12,lower_ci12,upper_ci12,p12_fp=0,p12_tn=0,p12_fn,p12_tp)
+```
+
+
+
+### Research Question 2:
+
+#### Scenario 1:  No Effect
+
+##### Simulation
+For scenario 1, we suppose that the coupon advertising on websites does not affect the conversion rate. In other words, we may find that the conversion rate of the treatment group is the same as that of the control group. We will use R code again to make data simulation: for the control group and the treatment group, we randomly generated 400 subjects that belong to binomial distributions. In the data table, "0" represents that the subject has not been successfully converted, while "1" represents that the subject has been successfully converted. Then, we conducted 1000 similar simulated data experiments and only the initial simulation data are listed below.
+```{r q2_scenario1_simulation}
+n<- 400
+test <- rep('Treatment', n)
+control <- rep('Control', n)
+group = c(test, control)
+ad21.dat<-data.table(Group = group)
+ad21_test <- rbinom(n = 400,1,p=0.06)
+ad21_control <- rbinom(n = 400,1,p=0.06)
+ad21 <- c(ad21_test, ad21_control)
+ad21.dat$AD <- ad21
+datatable(data=ad21.dat)
+# Analyze function
+analyze.experiment <- function(the.dat){
+    require(data.table)
+    setDT(the.dat)
+    the.test <- t.test(x=the.dat[Group == "Treatment", AD], y=the.dat[Group == "Control", AD], alternative = "greater")
+  
+    the.effect <- the.test$estimate[1]- the.test$estimate[2]
+    lower.bound <- the.test$conf.int[1]
+    Treat_mean <- the.test$estimate[1]
+    Contr_mean <- the.test$estimate[2]
+    p <- the.test$p.value
+    
+    result <- data.table(effect = the.effect, lower_ci = lower.bound, p = p, Treat_mean, Contr_mean)
+    
+    return(result)
+}
+# Simulation for 1000 experiments
+B<-1000
+n<-400
+RNGversion(vstr=6.6)
+set.seed(seed=66)
+Experiment<-rep.int(x=1:B, times=n)
+test21 <- rep('Treatment', n*B)
+control21 <- rep('Control', n*B)
+group21 = c(test21, control21)
+sim21.dat<-data.table(Experiment, Group=group21)
+setorderv(x=sim21.dat,cols=c("Experiment", "Group"), order=c(1,1))
+sim21.dat[Group == "Control", AD:= rbinom(n = .N,1,p=0.06)]
+sim21.dat[Group == "Treatment", AD:= rbinom(n = .N,1,p=0.06)]
+exp21.results<-sim21.dat[, analyze.experiment(the.dat= .SD), keyby="Experiment"]
+```
+
+##### Analysis
+Based on the test result for the initial simulation data, the p-value is larger than 0.05, so we fail to reject the null hypothesis. We may conclude that the the coupon advertising on website does not affect the conversion rate if our study produced data is like the data we simulated. After 1000 repeated experiments, the probability that we fail to reject the null hypothesis when the null hypothesis is true is about 95%.
+```{r q2_scenario1_analysis}
+analyze.experiment(ad21.dat)
+exp21.results
+e21<-mean(exp21.results$effect)
+t21<-t.test(exp21.results$effect)
+lower_ci21<-t21$conf.int[1]
+upper_ci21<- t21$conf.int[2]
+p21_fp<-exp21.results[,mean(p<0.05)]
+p21_tn<-1- p21_fp
+data.frame(e21,lower_ci21,upper_ci21,p21_fp,p21_tn,p21_fn=0,p21_tp=0)
+```
+
+
+
+#### Scenario 2:  An Expected Effect
+
+##### Simulation
+For scenario 2, we suppose that the coupon advertising on websites affects the conversion rate. In other words, we may find that the conversion rate of the treatment group is higher than that of the control group. We use R code again to make data simulation: for the control group and the treatment group, we randomly generated 400 subjects that belong to binomial distributions. In the data table, "0" represents that the subject has not been successfully converted, while "1" represents that the subject has been successfully converted. We also conducted 1000 similar simulated data experiments and only the initial simulation data are listed below.
+```{r q2_scenario2_simulation}
+n<- 400
+test <- rep('Treatment', n)
+control <- rep('Control', n)
+group = c(test, control)
+ad22.dat<-data.table(Group = group)
+ad22_test <- rbinom(n = 400,1,p=0.15)
+ad22_control <- rbinom(n = 400,1,p=0.06)
+ad22 <- c(ad22_test, ad22_control)
+ad22.dat$AD <- ad22
+datatable(data=ad22.dat)
+# Analyze function
+analyze.experiment <- function(the.dat){
+    require(data.table)
+    setDT(the.dat)
+    the.test <- t.test(x=the.dat[Group == "Treatment", AD], y=the.dat[Group == "Control", AD], alternative = "greater")
+  
+    the.effect <- the.test$estimate[1]- the.test$estimate[2]
+    lower.bound <- the.test$conf.int[1]
+    Treat_mean <- the.test$estimate[1]
+    Contr_mean <- the.test$estimate[2]
+    p <- the.test$p.value
+    
+    result <- data.table(effect = the.effect, lower_ci = lower.bound, p = p, Treat_mean, Contr_mean)
+    
+    return(result)
+}
+# Simulation for 1000 experiments
+B<-1000
+n<-400
+RNGversion(vstr=6.6)
+set.seed(seed=66)
+Experiment<-rep.int(x=1:B, times=n)
+test22 <- rep('Treatment', n*B)
+control22 <- rep('Control', n*B)
+group22 = c(test22, control22)
+sim22.dat<-data.table(Experiment, Group=group22)
+setorderv(x=sim22.dat,cols=c("Experiment", "Group"), order=c(1,1))
+sim22.dat[Group == "Control", AD:= rbinom(n = .N,1,p=0.06)]
+sim22.dat[Group == "Treatment", AD:= rbinom(n = .N,1,p=0.15)]
+exp22.results<-sim22.dat[, analyze.experiment(the.dat= .SD), keyby="Experiment"]
+```
+
+##### Analysis
+Based on the test result for the initial simulation data, the p-value is really small, so we would reject the null hypothesis. We may conclude that the the coupon advertising on website will have higher conversion rate if our study produced data is like the data we simulated. After 1000 repeated experiments, the probability that we reject the null hypothesis when the null hypothesis is false is about 99%.
+```{r q2_scenario2_analysis}
+analyze.experiment(ad22.dat)
+exp22.results
+e22<-mean(exp22.results$effect)
+t22<-t.test(exp22.results$effect)
+lower_ci22<-t22$conf.int[1]
+upper_ci22<- t22$conf.int[2]
+p22_fn<-exp22.results[,mean(p>0.05)]
+p22_tp<-1- p22_fn
+sd22<-sd(exp22.results$effect)
+ee22<-e22/sd22
+data.frame(ee22,e22,lower_ci22,upper_ci22,p22_fp=0,p22_tn=0,p22_fn,p22_tp)
+```
+
+### Research Question 3:
+
+#### Scenario 1:  No Effect
+
+##### Simulation
+For scenario 1, we suppose that the two coupon advertising methods have the same efficiency. In other words, we may find that the conversion rate of the treatment group is the same as that of the control group. We will use R code again to make data simulation: for the control group and the treatment group, we randomly generated 400 subjects that belong to binomial distributions. In the data table, "0" represents that the subject has not been successfully converted, while "1" represents that the subject has been successfully converted. Then, we conducted 1000 similar simulated data experiments and only the initial simulation data are listed below.
+```{r q3_scenario1_simulation}
+n<- 400
+test <- rep('Treatment', n)
+control <- rep('Control', n)
+group = c(test, control)
+ad31.dat<-data.table(Group = group)
+ad31_test <- rbinom(n = 400,1,p=0.12)
+ad31_control <- rbinom(n = 400,1,p=0.12)
+ad31 <- c(ad31_test, ad31_control)
+ad31.dat$AD <- ad31
+datatable(data=ad31.dat)
+# Analyze function
+analyze.experiment3 <- function(the.dat){
+    require(data.table)
+    setDT(the.dat)
+    the.test <- t.test(x=the.dat[Group == "Treatment", AD], y=the.dat[Group == "Control", AD], alternative = "two.sided")
+  
+    the.effect <- the.test$estimate[1]- the.test$estimate[2]
+    upper.bound <- the.test$conf.int[2]
+    lower.bound <- the.test$conf.int[1]
+    Treat_mean <- the.test$estimate[1]
+    Contr_mean <- the.test$estimate[2]
+    p <- the.test$p.value
+    
+    result <- data.table(effect = the.effect, lower_ci = lower.bound, upper_ci = upper.bound, p = p, Treat_mean, Contr_mean)
+    
+    return(result)
+}
+# Simulation for 1000 experiments
+B<-1000
+n<-400
+RNGversion(vstr=6.6)
+set.seed(seed=66)
+Experiment<-rep.int(x=1:B, times=n)
+test31 <- rep('Treatment', n*B)
+control31 <- rep('Control', n*B)
+group31 = c(test31, control31)
+sim31.dat<-data.table(Experiment, Group=group31)
+setorderv(x=sim31.dat,cols=c("Experiment", "Group"), order=c(1,1))
+sim31.dat[Group == "Control", AD:= rbinom(n = .N,1,p=0.12)]
+sim31.dat[Group == "Treatment", AD:= rbinom(n = .N,1,p=0.12)]
+exp31.results<-sim31.dat[, analyze.experiment3(the.dat= .SD), keyby="Experiment"]
+```
+
+##### Analysis
+Based on the test result for the initial simulation data, the p-value is larger than 0.05, so we fail to reject the null hypothesis. We may conclude that the the two coupon advertising methods have the same conversion rate if our study produced data is like the data we simulated. After 1000 repeated experiments, the probability that we fail to reject the null hypothesis when the null hypothesis is true is about 95%.
+```{r q3_scenario1_analysis}
+analyze.experiment3(ad31.dat)
+exp31.results
+e31<-mean(exp31.results$effect)
+t31<-t.test(exp31.results$effect)
+lower_ci31<-t31$conf.int[1]
+upper_ci31<- t31$conf.int[2]
+p31_fp<-exp31.results[,mean(p<0.05)]
+p31_tn<-1- p31_fp
+data.frame(e31,lower_ci31,upper_ci31,p31_fp,p31_tn,p31_fn=0,p31_tp=0)
+```
+
+
+
+#### Scenario 2:  An Expected Effect
+
+##### Simulation
+For scenario 2, we suppose that the two coupon advertising methods have different efficiency. In other words, we may find that the conversion rate of the treatment group is not the same as that of the control group. We will use R code again to make data simulation: for the control group and the treatment group, we randomly generated 400 subjects that belong to binomial distributions. In the data table, "0" represents that the subject has not been successfully converted, while "1" represents that the subject has been successfully converted. We also conducted 1000 similar simulated data experiments and only the initial simulation data are listed below.
+```{r q3_scenario2_simulation}
+n<- 400
+test <- rep('Treatment', n)
+control <- rep('Control', n)
+group = c(test, control)
+ad32.dat<-data.table(Group = group)
+ad32_test <- rbinom(n = 400,1,p=0.15)
+ad32_control <- rbinom(n = 400,1,p=0.12)
+ad32 <- c(ad32_test, ad32_control)
+ad32.dat$AD <- ad32
+datatable(data=ad32.dat)
+# Analyze function
+analyze.experiment3 <- function(the.dat){
+    require(data.table)
+    setDT(the.dat)
+    the.test <- t.test(x=the.dat[Group == "Treatment", AD], y=the.dat[Group == "Control", AD], alternative = "two.sided")
+  
+    the.effect <- the.test$estimate[1]- the.test$estimate[2]
+    upper.bound <- the.test$conf.int[2]
+    lower.bound <- the.test$conf.int[1]
+    Treat_mean <- the.test$estimate[1]
+    Contr_mean <- the.test$estimate[2]
+    p <- the.test$p.value
+    
+    result <- data.table(effect = the.effect, lower_ci = lower.bound, upper_ci = upper.bound, p = p, Treat_mean, Contr_mean)
+    
+    return(result)
+}
+# Simulation for 1000 experiments
+B<-1000
+n<-400
+RNGversion(vstr=6.6)
+set.seed(seed=66)
+Experiment<-rep.int(x=1:B, times=n)
+test32 <- rep('Treatment', n*B)
+control32 <- rep('Control', n*B)
+group32 = c(test32, control32)
+sim32.dat<-data.table(Experiment, Group=group32)
+setorderv(x=sim32.dat,cols=c("Experiment", "Group"), order=c(1,1))
+sim32.dat[Group == "Control", AD:= rbinom(n = .N,1,p=0.12)]
+sim32.dat[Group == "Treatment", AD:= rbinom(n = .N,1,p=0.15)]
+exp32.results<-sim32.dat[, analyze.experiment3(the.dat= .SD), keyby="Experiment"]
+```
+
+##### Analysis
+Based on the test result for the initial simulation data, the p-value is small, so we would reject the null hypothesis. We may conclude that the the two coupon advertising methods will have different conversion rates if our study produced data is like the data we simulated. After 1000 repeated experiments, the probability that we reject the null hypothesis when the null hypothesis is false is about 22%.
+```{r q3_scenario2_analysis}
+analyze.experiment3(ad32.dat)
+exp32.results
+e32<-mean(exp32.results$effect)
+t32<-t.test(exp32.results$effect)
+lower_ci32<-t32$conf.int[1]
+upper_ci32<- t32$conf.int[2]
+p32_fn<-exp32.results[,mean(p>0.05)]
+p32_tp<-1- p32_fn
+sd32<-sd(exp32.results$effect)
+ee32<-e32/sd32
+data.frame(ee32,e32,lower_ci32,upper_ci32,p32_fp=0,p32_tn=0,p32_fn,p32_tp)
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Research    Scenario    Mean Effect     95% Confidence              Percentage of    Percentage of    Percentage of    Percentage of
+Question                in Simulated    Interval of                 False            True             False            True 
+                        Data            Mean Effect                 Positives        Negatives        Negatives        Positives
+----------  ---------  -------------  --------------------------   --------------   --------------   --------------   --------------
+1 Question1  No Effect  -0.0003575	  (-0.001332668,0.000617668)      4.7%             95.3%              0                0
+
+2 Question1  Effect:     0.0697375    (0.06854239,0.07093261)          0                 0               2.3%             97.7%
+             (3.621038)
+
+3 Question2  No Effect   0.00016      (-0.000897691,0.001217691)      4.9%             95.1%              0                0 
+     
+    
+4 Question2  Effect:     0.0897475    (0.0884456,0.0910494)            0                 0               0.7%             99.3%
+             (4.277778)
+
+5 Question3  No Effect   0.000115     (-0.001278094,0.001508094)      5.4%             94.6%              0                0
+      
+
+6 Question3  Effect:     0.0298225    (0.02837391,0.03127109)          0                 0               77.9%            22.1%
+             (1.277535)
+-------------------------------------------------------------------------------------------------------------------------------------------    
+Table: Analysis results associated with the three research questions and two scenarios.
+
+## References
+1. Saxon, S. (2019, January 29). Taking on airlines’ toughest challenges. Retrieved October 28, 2020, from https://www.mckinsey.com/industries/travel-logistics-and-transport-infrastructure/our-insights/taking-on-airlines-toughest-challenges
+2. Sobieralski, J. B. (2020). COVID-19 and airline employment: Insights from historical uncertainty shocks to the industry. Transportation Research Interdisciplinary Perspectives, 5, 100123. doi:10.1016/j.trip.2020.100123
+3. Maneenop, S., & Kotcharin, S. (2020). The impacts of COVID-19 on the global airline industry: An event study approach. Journal of Air Transport Management, 89, 101920. doi:10.1016/j.jairtraman.2020.101920
+4. Albers, S., & Rundshagen, V. (2020). European airlines′ strategic responses to the COVID-19 pandemic (January-May, 2020). Journal of Air Transport Management, 87, 101863. doi:10.1016/j.jairtraman.2020.101863
+5. Saed, R. A., Upadhya, A., & Saleh, M. A. (2020). Role of airline promotion activities in destination branding: Case of Dubai vis-à-vis Emirates Airline. European Research on Management and Business Economics, 26(3), 121-126. doi:10.1016/j.iedeen.2020.07.001
+6. Miaoulis, G., & Michener, R. D. (1976). An introduction to sampling. Kendall.
+7. Krejcie, R. V., & Morgan, D. W. (1970). Determining sample size for research activities. Educational and psychological measurement, 30(3), 607-610.
+8. Israel, G. D. (1992). Determining sample size.
+9. Czerny, A., Fu, X., Lei, Z., & Oum, T. (2020, November 09). Post pandemic aviation market recovery: Experience and lessons from China. Retrieved December 09, 2020, from https://www.sciencedirect.com/science/article/pii/S0969699720305548?casa_token=Atf_zuHklRAAAAAA%3Az4dIBuqouPInMZKzbsQGU3Jbw4gVgG9fwJyTlkUqXRqeU0_h69V8758uB3A5K3O6GzMRe17Krg
+10. Murphy, D. (2019, April 15). Increasing clicks through advanced targeting: Applying the third-party seal model to airline advertising. Retrieved December 10, 2020, from https://mpra.ub.uni-muenchen.de/93886/
+11. Pritscher, L., & Feyen, H. (n.d.). Data Mining And Strategic Marketing In The Airline Industry. Retrieved December 10, 2020, from http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.124.7062
